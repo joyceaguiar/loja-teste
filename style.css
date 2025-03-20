@@ -301,3 +301,16 @@ button:hover {
     background-color: #e6c868;
 
 }
+
+.resposta {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.pergunta {
+    cursor: pointer;
+}
+
+.pergunta.ativa .resposta {
+    display: block;
+}

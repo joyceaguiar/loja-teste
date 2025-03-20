@@ -24,25 +24,31 @@
     <section class="faq">
         <h2>Principais Dúvidas</h2>
 
-        <div class="pergunta">
+        <div class="pergunta" onclick="toggleResposta(this)">
             <h3>1. Como faço um pedido?</h3>
-            <p>Você pode selecionar um produto e clicar no botão "Comprar no WhatsApp". Nossa equipe responderá em poucos minutos.</p>
+            <p class="resposta">Você pode selecionar um produto e clicar no botão "Comprar no WhatsApp". Nossa equipe responderá em poucos minutos.</p>
         </div>
 
-        <div class="pergunta">
+        <div class="pergunta" onclick="toggleResposta(this)">
             <h3>2. Quais formas de pagamento vocês aceitam?</h3>
-            <p>Aceitamos pagamentos via Pix, cartão de crédito e boleto bancário.</p>
+            <p class="resposta">Aceitamos pagamentos via Pix, cartão de crédito e boleto bancário.</p>
         </div>
 
-        <div class="pergunta">
+        <div class="pergunta" onclick="toggleResposta(this)">
             <h3>3. Vocês fazem entregas?</h3>
-            <p>Sim! Enviamos para todo o Brasil via Correios e transportadoras.</p>
+            <p class="resposta">Sim! Enviamos para todo o Brasil via Correios e transportadoras.</p>
         </div>
 
-        <div class="pergunta">
+        <div class="pergunta" onclick="toggleResposta(this)">
             <h3>4. Qual é o prazo de entrega?</h3>
-            <p>O prazo varia conforme a localização, mas geralmente leva entre 5 a 10 dias úteis.</p>
+            <p class="resposta">O prazo varia conforme a localização, mas geralmente leva entre 5 a 10 dias úteis.</p>
         </div>
     </section>
+
+    <script>
+        function toggleResposta(element) {
+            element.classList.toggle("ativa");
+        }
+    </script>
 </body>
 </html>
