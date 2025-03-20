@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Compras - Hype Closet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Minhas Compras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="minhas-compras">
+        <h2>Seus pedidos</h2>
+        <ul id="lista-compras"></ul>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let compras = JSON.parse(localStorage.getItem("compras")) || [];
+            let listaCompras = document.getElementById("lista-compras");
+
+            if (compras.length === 0) {
+                listaCompras.innerHTML = "<p>Você ainda não fez compras.</p>";
+            } else {
+                compras.forEach(item => {
+                    let li = document.createElement("li");
+                    li.innerText = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
+                    listaCompras.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

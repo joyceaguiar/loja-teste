@@ -185,12 +185,12 @@ input, textarea {
 button {
     background-color: #d7bde2;
     color: white;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 
 }
 
@@ -284,7 +284,7 @@ button:hover {
 }
 
 .carrinho button {
-    background-color: #d7bde2;
+    background-color: #8b3cad;
     color: white;
     padding: 10px;
     border: none;
@@ -294,7 +294,7 @@ button:hover {
 }
 
 .botao-carrinho {
-    background-color: #ae6bca;
+    background-color: #a254c4;
     color: white;
     padding: 10px;
     border: none;

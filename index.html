@@ -110,11 +110,33 @@
     }
 
     function finalizarCompra() {
-        alert("Compra finalizada! Obrigado por comprar conosco.");
-        carrinho = [];
-        total = 0;
-        atualizarCarrinho();
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
     }
+
+    let mensagem = "Olá! Gostaria de finalizar minha compra com os seguintes itens:%0A";
+    let totalCompra = 0;
+
+    carrinho.forEach(item => {
+        mensagem += `- ${item.produto}: R$ ${item.preco.toFixed(2)}%0A`;
+        totalCompra += item.preco;
+    });
+
+    mensagem += `%0ATotal: R$ ${totalCompra.toFixed(2)}`;
+
+    let telefoneVendedor = "https://wa.me/63992376264"; // Substitua pelo seu número de WhatsApp (exemplo: "5511999999999")
+    let linkWhatsApp = `https://wa.me/${63992376264}?text=${mensagem}`;
+
+    window.location.href = linkWhatsApp; // Redireciona para o WhatsApp
+
+    localStorage.setItem("compras", JSON.stringify(carrinho)); // Salva no navegador
+
+    carrinho = [];
+    total = 0;
+    atualizarCarrinho();
+}
+    
 </script>
 
 </body>
