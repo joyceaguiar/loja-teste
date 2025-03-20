@@ -186,3 +186,28 @@ button {
 button:hover {
     background-color: #fcedb5ec;
 }
+
+.faq {
+    text-align: center;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.pergunta {
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pergunta h3 {
+    color: #f5b041;
+}
+
+.pergunta p {
+    color: #333;
+    font-size: 16px;
+}
