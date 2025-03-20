@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #fcf3cf;
+    background-color: #d7bde2 ;
     color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
     padding: 15px;
@@ -59,7 +59,12 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     width: 200px;
+    transition: transform 0.3s ease-in-out;
 
+}
+
+.produto:hover {
+    transform: scale(1.05);
 }
 
 .produto img {
@@ -128,14 +133,14 @@ nav ul li a:hover {
 }
 
 .sobre h2 {
-    color: #fcedb5ec;
+    color: #bb8fce ;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
    
 
 }
 
 footer {
-    background-color: #fcf3cf;
+    background-color: #d7bde2;
     color: rgb(73, 70, 70);
     text-align: center;
     padding: 20px;
@@ -178,7 +183,7 @@ input, textarea {
 }
 
 button {
-    background-color: #fcedb5ec;
+    background-color: #d7bde2;
     color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
     padding: 10px;
@@ -190,7 +195,7 @@ button {
 }
 
 button:hover {
-    background-color: #fcedb5ec;
+    background-color: #cc90e6;
 }
 
 .faq {
@@ -210,7 +215,7 @@ button:hover {
 }
 
 .pergunta h3 {
-    color: #f5b041;
+    color: #c497d6;
 }
 
 .pergunta p {
@@ -279,7 +284,7 @@ button:hover {
 }
 
 .carrinho button {
-    background-color: #f3d46e;
+    background-color: #d7bde2;
     color: white;
     padding: 10px;
     border: none;
@@ -289,7 +294,7 @@ button:hover {
 }
 
 .botao-carrinho {
-    background-color: #f3e6ab;
+    background-color: #ae6bca;
     color: white;
     padding: 10px;
     border: none;
@@ -298,7 +303,7 @@ button:hover {
 }
 
 .botao-carrinho:hover {
-    background-color: #e6c868;
+    background-color: #682485;
 
 }
 
