@@ -21,8 +21,7 @@
 
             </ul>
             
-           
-          <button onclick="abrirCarrinho()">🛒 Carrinho (<span id="contador-carrinho">0</span>)</button>
+               <button onclick="abrirCarrinho()">🛒 Ver Carrinho</button>
         </nav>
     </header>
 
@@ -181,12 +180,6 @@ function atualizarCarrinho() {
 
     function fecharCarrinho() {
         document.getElementById("modal-carrinho").style.display = "none";
-    }
-
-    function limparCarrinho() {
-    carrinho = [];
-    total = 0;
-    atualizarCarrinho();
     }
 </script>
 
