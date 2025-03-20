@@ -147,4 +147,42 @@ footer {
     text-decoration: underline;
 }
 
+.contato {
+    text-align: center;
+    padding: 40px;
+    max-width: 500px;
+    margin: auto;
 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+button {
+    background-color: #fcedb5ec;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #fcedb5ec;
+}
