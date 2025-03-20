@@ -21,7 +21,8 @@
 
             </ul>
             
-               <button onclick="abrirCarrinho()">🛒 Ver Carrinho</button>
+            <div class="carrinho-container">
+                🛒 <span id="contador-carrinho">0</span>
         </nav>
     </header>
 
@@ -77,7 +78,6 @@
     <h2>Carrinho de Compras</h2>
     <ul id="lista-carrinho"></ul>
     <p>Total: R$ <span id="total-carrinho">0.00</span></p>
-    <button onclick="limparCarrinho()" class="limpar-carrinho">🗑 Limpar Carrinho</button>
     <button onclick="finalizarCompra()">Finalizar Compra</button>
 </div>
 
@@ -86,38 +86,30 @@
     let total = 0;
 
     function adicionarAoCarrinho(produto, preco) {
-    let itemExistente = carrinho.find(item => item.produto === produto);
-
-    if (itemExistente) {
-        itemExistente.quantidade += 1;
-    } else {
-        carrinho.push({ produto, preco, quantidade: 1 });
+        carrinho.push({ produto, preco });
+        total += preco;
+        atualizarCarrinho();
     }
 
-    total += preco;
-    atualizarCarrinho();
-}
+    function atualizarCarrinho() {
+        let listaCarrinho = document.getElementById("lista-carrinho");
+        let contador = document.getElementById("contador-carrinho");
+        let totalCarrinho = document.getElementById("total-carrinho");
+        let carrinhoDiv = document.getElementById("carrinho");
 
-function atualizarCarrinho() {
-    let listaCarrinho = document.getElementById("lista-carrinho-modal");
-    let contador = document.getElementById("contador-carrinho");
-    let totalCarrinho = document.getElementById("total-carrinho-modal");
+        listaCarrinho.innerHTML = "";
+        carrinho.forEach(item => {
+            let li = document.createElement("li");
+            li.innerText = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
+            listaCarrinho.appendChild(li);
+        });
 
-    listaCarrinho.innerHTML = "";
-    let totalItens = 0;
+        contador.innerText = carrinho.length;
+        totalCarrinho.innerText = total.toFixed(2);
+        carrinhoDiv.style.display = "block";
+    }
 
-    carrinho.forEach(item => {
-        let li = document.createElement("li");
-        li.innerText = `${item.produto} (x${item.quantidade}) - R$ ${(item.preco * item.quantidade).toFixed(2)}`;
-        listaCarrinho.appendChild(li);
-        totalItens += item.quantidade;
-    });
-
-    contador.innerText = totalItens; // Atualiza o número ao lado do ícone do carrinho
-    totalCarrinho.innerText = total.toFixed(2);
-}
-    
-      function finalizarCompra() {
+    function finalizarCompra() {
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
         return;
@@ -144,43 +136,7 @@ function atualizarCarrinho() {
     total = 0;
     atualizarCarrinho();
 }
-
-</script>
-
-<!-- Modal do Carrinho -->
-<div id="modal-carrinho" class="modal">
-    <div class="modal-conteudo">
-        <span class="fechar" onclick="fecharCarrinho()">&times;</span>
-        <h2>Seu Carrinho</h2>
-        <ul id="lista-carrinho-modal"></ul>
-        <p>Total: R$ <span id="total-carrinho-modal">0.00</span></p>
-        <button onclick="finalizarCompra()">Finalizar Compra</button>
-    </div>
-</div>
-
-<script>
-    function abrirCarrinho() {
-        let modal = document.getElementById("modal-carrinho");
-        let listaCarrinho = document.getElementById("lista-carrinho-modal");
-        let totalCarrinho = document.getElementById("total-carrinho-modal");
-
-        listaCarrinho.innerHTML = "";
-        let total = 0;
-
-        carrinho.forEach(item => {
-            let li = document.createElement("li");
-            li.innerText = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
-            listaCarrinho.appendChild(li);
-            total += item.preco;
-        });
-
-        totalCarrinho.innerText = total.toFixed(2);
-        modal.style.display = "flex";
-    }
-
-    function fecharCarrinho() {
-        document.getElementById("modal-carrinho").style.display = "none";
-    }
+    
 </script>
 
 </body>
