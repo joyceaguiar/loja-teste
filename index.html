@@ -23,7 +23,7 @@
             
             
             <div class="carrinho-container">
-                🛒 <span id="contador-carrinho">0</span>
+                <button onclick="toggleCarrinho()">🛒 Ver Carrinho (<span id="contador-carrinho">0</span>)</button>
                 
         </nav>
     </header>
@@ -100,15 +100,22 @@
         let carrinhoDiv = document.getElementById("carrinho");
 
         listaCarrinho.innerHTML = "";
+        let totalItens = 0;
+
         carrinho.forEach(item => {
             let li = document.createElement("li");
-            li.innerText = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
+            li.innerText = `${item.produto} (x1) - R$ ${item.preco.toFixed(2)}`;
             listaCarrinho.appendChild(li);
+            totalItens++;
         });
 
-        contador.innerText = carrinho.length;
+        contador.innerText = totalItens;
         totalCarrinho.innerText = total.toFixed(2);
-        carrinhoDiv.style.display = "block";
+    }
+
+    function toggleCarrinho() {
+        let carrinhoDiv = document.getElementById("carrinho");
+        carrinhoDiv.style.display = carrinhoDiv.style.display === "none" || carrinhoDiv.style.display === "" ? "block" : "none";
     }
 
     function finalizarCompra() {
