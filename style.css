@@ -113,5 +113,23 @@ nav ul li a:hover {
 
 }
 
+footer {
+    background-color: #fcf3cf;
+    color: rgb(73, 70, 70);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.redes-sociais a {
+    color: rgb(66, 65, 65);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.redes-sociais a:hover {
+    text-decoration: underline;
+}
 
 
