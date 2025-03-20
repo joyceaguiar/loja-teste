@@ -18,7 +18,11 @@
                 <li><a href="sobre.html">Sobre Nós</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+
             </ul>
+            <div class="carrinho-container">
+                🛒 <span id="contador-carrinho">0</span>
+               </div>
         </nav>
     </header>
 
@@ -27,28 +31,32 @@
             <img src="produto1.jpg" alt="Produto 1">
             <h2>Calça Cargo</h2>
             <p>P, M e G</p>
-            <a href="https://wa.me/63992376264?text=Olá,%20quero%20comprar%20a%20calça%20cargo!" class="botao-whatsapp">Comprar no WhatsApp</a>
+            <p>R$ 159,90</p>
+            <button class="botao-carrinho" onclick="adicionarAoCarrinho('Produto 1', 159.90)">Adicionar ao Carrinho</button>
         </div>
     
         <div class="produto">
             <img src="produto2.jpg" alt="Produto 2">
             <h2>Shorts Femininos</h2>
             <p>P, M e G</p>
-            <a href="https://wa.me/63992376264?text=Olá,%20quero%20comprar%20os%20shorts!" class="botao-whatsapp">Comprar no WhatsApp</a>
+            <p>R$ 99,90</p>
+            <button class="botao-carrinho" onclick="adicionarAoCarrinho('Produto 1', 99.90)">Adicionar ao Carrinho</button>
         </div>
     
         <div class="produto">
             <img src="produto3.jpg" alt="Produto 3">
             <h2>Regata Cropped Branco</h2>
             <p>P, M e G</p>
-            <a href="https://wa.me/63992376264?text=Olá,%20quero%20comprar%20a%20blusa%201!" class="botao-whatsapp">Comprar no WhatsApp</a>
+            <p>R$ 59,90</p>
+            <button class="botao-carrinho" onclick="adicionarAoCarrinho('Produto 1', 59.90)">Adicionar ao Carrinho</button>
         </div>
     
         <div class="produto">
             <img src="produto4.jpg" alt="Produto 4">
             <h2>Cordão Frontal Top</h2>
             <p>P, M e G</p>
-            <a href="https://wa.me/63992376264?text=Olá,%20quero%20comprar%20a%20blusa%202!" class="botao-whatsapp">Comprar no WhatsApp</a>
+            <p>R$ 49,90</p>
+            <button class="botao-carrinho" onclick="adicionarAoCarrinho('Produto 1', 49.90)">Adicionar ao Carrinho</button>
         </div>
     </section>
     <footer>
@@ -65,6 +73,49 @@
             menu.classList.toggle("show-menu");
         }
     </script>
+
+   <div id="carrinho" class="carrinho">
+    <h2>Carrinho de Compras</h2>
+    <ul id="lista-carrinho"></ul>
+    <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
+
+<script>
+    let carrinho = [];
+    let total = 0;
+
+    function adicionarAoCarrinho(produto, preco) {
+        carrinho.push({ produto, preco });
+        total += preco;
+        atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+        let listaCarrinho = document.getElementById("lista-carrinho");
+        let contador = document.getElementById("contador-carrinho");
+        let totalCarrinho = document.getElementById("total-carrinho");
+        let carrinhoDiv = document.getElementById("carrinho");
+
+        listaCarrinho.innerHTML = "";
+        carrinho.forEach(item => {
+            let li = document.createElement("li");
+            li.innerText = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
+            listaCarrinho.appendChild(li);
+        });
+
+        contador.innerText = carrinho.length;
+        totalCarrinho.innerText = total.toFixed(2);
+        carrinhoDiv.style.display = "block";
+    }
+
+    function finalizarCompra() {
+        alert("Compra finalizada! Obrigado por comprar conosco.");
+        carrinho = [];
+        total = 0;
+        atualizarCarrinho();
+    }
+</script>
 
 </body>
 </html>
