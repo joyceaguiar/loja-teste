@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #34495e;
     color: white;
     padding: 15px;
     display: flex;
@@ -87,3 +87,20 @@ nav ul li a:hover {
         width: 80%;
     }
 }
+
+.sobre {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 50px;
+    max-width: 800px;
+    margin: auto;
+
+}
+
+.sobre h2 {
+    color: #34495e;
+
+}
+
+
+
