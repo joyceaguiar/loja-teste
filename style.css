@@ -207,7 +207,7 @@ button:hover {
 
 .pergunta {
     text-align: left;
-    background-color: #f8f9fa;
+    background-color: #a254c4;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -243,7 +243,7 @@ button:hover {
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: #fcedb5ec;
+        background-color: #a254c4;
         width: 100%;
         text-align: center;
         padding: 10px 0;
